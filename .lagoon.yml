@@ -1,6 +1,10 @@
 docker-compose-yaml: docker-compose.yml
 
-project: drupal-example
+endpoint: ssh-lagoon-k8s-kubernetes.ch.amazee.io:32185
+ssh: ssh-lagoon-k8s-kubernetes.ch.amazee.io:32185
+api: https://api-lagoon-k8s-kubernetes.ch.amazee.io
+
+project: ben-test
 
 tasks:
 #   pre-rollout:
@@ -32,3 +36,8 @@ tasks:
         command: drush -y cr
         service: cli
 
+environments:
+  master:
+    routes:
+      - nginx:
+          - ben-test-master-nginx.de.amazee.io
