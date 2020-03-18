@@ -1,8 +1,8 @@
 docker-compose-yaml: docker-compose.yml
 
-endpoint: ssh-lagoon-k8s-kubernetes.ch.amazee.io:32185
-ssh: ssh-lagoon-k8s-kubernetes.ch.amazee.io:32185
-api: https://api-lagoon-k8s-kubernetes.ch.amazee.io
+endpoint: ssh.develop.amazeeio.review:32222
+ssh: ssh.develop.amazeeio.review:32222
+api: https://api-lagoon-dev-develop.us.amazee.io
 
 project: ben-test
 
@@ -36,8 +36,13 @@ tasks:
         command: drush -y cr
         service: cli
 
-environments:
-  master:
+production_routes:
+  active:
     routes:
       - nginx:
-          - ben-test-master-nginx.de.amazee.io
+          ben-test-active.us.amazee.io
+          ben-test-production.us.amazee.io
+  standby:
+    routes:
+      - nginx:
+          ben-test-standby.us.amazee.io
