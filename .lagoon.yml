@@ -40,9 +40,9 @@ production_routes:
   active:
     routes:
       - nginx:
-          ben-test-active.us.amazee.io
-          ben-test-production.us.amazee.io
+         - ben-test-active.us.amazee.io
+         - ben-test-production.us.amazee.io
   standby:
     routes:
       - nginx:
-          ben-test-standby.us.amazee.io
+         - ben-test-standby.us.amazee.io
