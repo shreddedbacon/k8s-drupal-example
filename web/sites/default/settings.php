@@ -119,6 +119,8 @@ if (getenv('LAGOON')) {
 if (getenv('LAGOON_ROUTES')) {
   $settings['trusted_host_patterns'] = array(
     '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ROUTES')) . '$', // escape dots, remove schema, use commas as regex separator
+    '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_STANDBY_ROUTES')) . '$',
+    '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ACTIVE_ROUTES')) . '$',
    );
 }
 
